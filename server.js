@@ -3,8 +3,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 
+app.use(express.static('.'))
+
 app.get('/about', (req, res) => {
-  res.sendFile('about.html')
+  res.sendFile('/about.html')
 })
 
 app.get('/:name', (req, res) => {
